@@ -1,6 +1,7 @@
 $(function(){
-	$('#masonry-item').masonry({
+	$('#masonry').masonry({
 		itemSelector: '.masonry-item',
-		columnWidth: 100
+		percentPosition: true,
+		columnWidth: '.grid-sizer'
 	});
 })

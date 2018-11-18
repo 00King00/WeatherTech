@@ -5,10 +5,38 @@ html
 		span воаіоатіо
 		.text
 			span тестовий шар
-		.title Фотографии клиентов
-		#masonry
-			img.masonry-item(src="images/photo/advangages-photo_01.jpg")
-			img.masonry-item(src="images/photo/advangages-photo_02.jpg")
+		.wrapper
+			.product-fit
+				.product-fit__img
+					img(src="images/photo/product-image.png")
+				.product-fit__info
+					.product-fit__title Данные коврики предназначены для следующих моделей автомобилей:
+					.product-fit__list
+						- var year = 2019;
+						- var year1 = 2019;
+						ul
+							while year >= 2008
+								if year <= 2011
+									li TOYOTA Land Cruiser 200 #{year}*
+								else
+									li TOYOTA Land Cruiser 200 #{year}
+								- year--
+						ul
+							while year1 >= 2008
+								if year1 <= 2011
+									li LEXUS LX570 #{year1}*
+								else
+									li LEXUS LX570 #{year1}
+								- year1--
+					.product-fit__note *Для этого автомобиля потребуется приобретение дополнительных фиксаторов. А также последующая их уставновка в обивку пола для крепления 
+		.wrapper-outer
+			.title Фотографии клиентов
+			#masonry
+				.grid-sizer
+				.masonry-item
+					img(src="images/photo/advangages-photo_01.jpg")
+				.masonry-item
+					img(src="images/photo/advangages-photo_02.jpg")
 		.comments
 			.wrapper
 				.title Отзывы
@@ -31,8 +59,8 @@ html
 			.order-label__title Коврики салона черные WeatherTech для  Toyota Land Cruiser 200 2016-
 			a.btn(href="#") Заказать
 		.footer
-			.footer__copyright-title title dsdfgfdg df gdf 
-			.footer__copyright-text copyright-text b hfh fghf fghfdfgdfg  dfg dg dfgdg dg d copyright-text b hfh fghf fghfdfgdfg  dfg dg dfgdg dg d
+			.footer__copyright-title 2014-2018 ООО Автопокрытия ИНН 5403364313 ОГРН 1145476140920 
+			.footer__copyright-text Копирование, публикация, распространение, цитирование и любые иные действия с информацией на данном сайте категорически запрещено!
 			ul.footer__list
 				li
 					a(href="#") Каталог
