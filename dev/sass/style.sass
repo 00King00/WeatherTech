@@ -36,8 +36,28 @@ ul
 	font: 400 60px $pfdin
 	text-transform: uppercase
 	text-align: center
+	margin-bottom: 45px
 	+breakpoint(mobileonly)
 		font: 400 30px $pfdin
+		margin-bottom: 25px
+.product-fit
+	text-align: center
+	&__img
+		margin-bottom: 25px
+	&__title
+
+	&__note
+		color: #848484
+
+	&__info
+		margin: 0 auto
+		max-width: 660px
+	&__list
+		display: flex
+		justify-content: space-around
+		text-align: justify
+.grid-sizer, .masonry-item
+	 width: 33.333%
 .comments
 	background-color: #f3f5f8
 	padding-bottom: 125px

@@ -30,7 +30,5 @@
     "gulp-server-livereload": "^1.9.2",
     "gulp-watch": "^4.3.11"
   },
-  "dependencies": {
-    "masonry-layout": "^4.2.2"
-  }
+  "dependencies": {}
 }
