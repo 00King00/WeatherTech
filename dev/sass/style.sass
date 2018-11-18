@@ -32,3 +32,111 @@ ul
 .text
 	span
 		font: 400 24px/24px $pfdin
+.title
+	font: 400 60px $pfdin
+	text-transform: uppercase
+	text-align: center
+	+breakpoint(mobileonly)
+		font: 400 30px $pfdin
+.comments
+	background-color: #f3f5f8
+	padding-bottom: 125px
+	padding-top: 70px
+	margin-bottom: 60px
+	+breakpoint(mobileonly)
+		margin-bottom: 25px
+		padding-bottom: 25px
+		padding-top: 30px
+	.title
+		margin-bottom: 90px
+		+breakpoint(mobileonly)
+			margin-bottom: 30px
+	&__avatar
+		width: 107px
+		height: 107px
+		border-radius: 107px
+		float: left
+		margin-right: 30px
+	&__autor
+		text-transform: uppercase
+		font: 400 26px $pfdin
+		height: 62px
+		overflow: hidden
+		+breakpoint(mobileonly)
+			font: 400 24px $pfdin
+		+breakpoint(tablet)
+			font: 400 36px $pfdin
+			height: 86px
+		+breakpoint(laptop)
+			height: auto
+	&__autor-description
+		color: #8b8b8b
+		font: 400 18px $pfdin
+		margin-bottom: 30px
+		height: 44px
+		overflow: hidden
+		+breakpoint(tablet)
+			margin-bottom: 10px
+		+breakpoint(laptop)
+			margin-bottom: 20px
+			height: auto
+
+	&__title
+		text-transform: uppercase
+		font: 400 21px $pfdin
+		margin-bottom: 30px
+	&__text
+		color: #848484
+		font: 400 18px $pfdin
+		padding-bottom: 20px
+
+.order-label
+	margin: 0 auto 135px auto
+	border: 5px solid black
+	max-width: 1070px
+	padding: 70px 20px 45px 20px
+	text-align: center
+	+breakpoint(mobileonly)
+		padding: 30px 10px 15px 10px
+		margin-bottom: 25px
+	&__title
+		text-transform: uppercase
+		font:  400 36px $pfdin
+		max-width: 520px
+		margin: 0 auto 25px auto
+		+breakpoint(mobileonly)
+			font:  400 18px $pfdin
+.footer
+	background-color: #030304
+	padding: 55px 0 25px 0
+	text-align: center
+	color: white
+	&__copyright-title
+		margin: 0  auto 25px auto
+		max-width: 470px
+
+	&__copyright-text
+		margin: 0  auto 30px auto
+		max-width: 470px
+	&__list
+		margin-bottom: 25px
+		// display: flex
+		// justify-content: center
+		li
+			display: inline-block
+			padding: 0 20px
+			color: grey
+			//flex-shrink: 1
+			+breakpoint(mobileonly)
+				display: block
+				&:not(:last-child)
+					margin-bottom: 10px
+			+breakpoint(tablet)
+				padding: 0 30px
+			&:not(:last-child)
+				border-right: 1px solid grey
+	&__icons
+		width: 160px
+		margin: 0 auto
+		display: flex
+		justify-content: space-between
