@@ -2,38 +2,14 @@ html
 	head
 		include ./parts/head.pug
 	body
-		.main-screen
-			.header
-				.header-top
-					.bars
-						.bar
-						.bar
-						.bar
-					ul.header-user-buttons
-						li
-							a(href="#")
-								span.icon.icon_search
-						li
-							a(href="#")
-								span.icon.icon_cart
-					span.show-laptop-inline Бесплатная доставка по России заказов от 15,000 руб
-					a.show-laptop-inline.phone(href="tel:88007008708") 8-800-700-87-08
-				.header-bottom
-					.logo
-						a(href="#")
-							img(src="images/photo/logo.png", alt="logo")
-					.main-menu
-						ul.menu
-							li
-								a(href="#")
-									span.catalog 
-									span Каталог
-							li 
-								a(href="#") Все о ковриках
-							li 
-								a(href="#") Оплата и Доставка
-							li 
-								a(href="#") Контакты
+		.wrapper-outer
+			.main-screen
+				.header
+					.header-top
+						.bars
+							.bar
+							.bar
+							.bar
 						ul.header-user-buttons
 							li
 								a(href="#")
@@ -41,18 +17,147 @@ html
 							li
 								a(href="#")
 									span.icon.icon_cart
-			.main-screen-title
-				span ГАРАНТИРОВАННАЯ ЗАЩИТА ОТ ГРЯЗИ
-				span.sub1 с неограниченным сроком эксплуатации
-				span.sub2 TOYOTA LAND CRUISER 200 С КОВРИКАМИ WEATHERTECH
-
-			span воаіоатіо
-		.text
-			span тестовий шар
-		.title Фотографии клиентов
-		#masonry
-			img.masonry-item(src="images/photo/advangages-photo_01.jpg")
-			img.masonry-item(src="images/photo/advangages-photo_02.jpg")
+						span.show-laptop-inline Бесплатная доставка по России заказов от 15,000 руб
+						a.show-laptop-inline.phone(href="tel:88007008708") 8-800-700-87-08
+					.header-bottom
+						.logo
+							a(href="#")
+								img(src="images/photo/logo.png", alt="logo")
+						.main-menu
+							ul.menu
+								li
+									a(href="#")
+										span.catalog 
+										span Каталог
+								li 
+									a(href="#") Все о ковриках
+								li 
+									a(href="#") Оплата и Доставка
+								li 
+									a(href="#") Контакты
+							ul.header-user-buttons
+								li
+									a(href="#")
+										span.icon.icon_search
+								li
+									a(href="#")
+										span.icon.icon_cart
+				.main-screen-title
+					.line1 ГАРАНТИРОВАННАЯ ЗАЩИТА ОТ ГРЯЗИ
+					.line2 с неограниченным сроком эксплуатации
+					.line3 
+						span.signpainter для
+						span TOYOTA LAND CRUISER 200 С КОВРИКАМИ WEATHERTECH
+		.product-block
+			.wrapper
+				.clearfix
+					.col-tablet-1-2
+						.product__pic
+							img(src="images/photo/product-image.png")
+					.col-tablet-1-2
+						.product__complect
+							|Комплект digitalfit  floorliner
+						.product__name
+							|Коврики салона черные WeatherTech для Toyota Land Cruiser 200 2016-
+						.product__complectation
+							|Включает в себя набор из 3х ковриков и обеспечивает абсолютную внутреннюю защиту пола для 1-го и 2-го ряда сидений.
+						.product__buy
+							.product__price
+								span 3 000
+								span.ruble "
+								.product__availability
+									span В наличии
+							.product__add-to-cart
+								.btn.btn_add-to-cart
+									span.icon.icon_cart
+									span Заказать
+						.product__about
+							.about-item
+								.circle-plus.closed
+									.circle
+										.horizontal
+										.vertical
+								.about-item__name Подробное описание товара
+								.about-item__description
+									|С неограниченным сроком эксплуатации. Включает в себя набор из 3х ковриков и обеспечивает абсолютную внутреннюю защиту пола для 1-го и 2-го ряда сидений.
+							.about-item
+								.circle-plus.closed
+									.circle
+										.horizontal
+										.vertical
+								.about-item__name Доставка
+								.about-item__description
+									|с неограниченным сроком эксплуатации
+							.about-item
+								.circle-plus.closed
+									.circle
+										.horizontal
+										.vertical
+								.about-item__name FAQ (Часто задаваемые вопросы)
+								.about-item__description
+									|с неограниченным сроком эксплуатации
+							.about-item
+								.circle-plus.closed
+									.circle
+										.horizontal
+										.vertical
+								.about-item__name Задать вопрос
+								.about-item__description
+									|с неограниченным сроком эксплуатации
+				.advangages
+					.clearfix
+						.col-phablet-1-2.no-padding
+							img(src="images/photo/advangages-photo_01.jpg")
+						.col-phablet-1-2.no-padding
+							.advantage-text
+								span
+									|Индивидуально разработанный дизайн для TOYOTA Land Cruiser 200. Водительский и пассажирский коврики крепятся на штатные фиксаторы. Передние коврики имеют заход на дверной порог и стойкие бортики. Водительский коврик имеет заход под педали. Прикрытая область зоны отдыха левой ноги. Ниша сбора воды и грязи у обоих ковриков первого ряда
+					.clearfix.show-phablet
+						.col-phablet-1-2.no-padding
+							.advantage-text
+								span
+									|Водонаправляющие каналы препятствующие расплескиванию воды. Коврик второго ряда сидений сделан цельный - одной частью. Смещение коврика 2-го ряда исключено за счет прилегания краев к деталям интерьера. Полностью закрытая область дверного проема вплоть до пластиковой накладки порога.
+						.col-phablet-1-2.no-padding
+							img(src="images/photo/advangages-photo_02.jpg")
+					.clearfix.hide-phablet
+						.col-phablet-1-2.no-padding
+							img(src="images/photo/advangages-photo_02.jpg")
+						.col-phablet-1-2.no-padding
+							.advantage-text
+								span
+									|Водонаправляющие каналы препятствующие расплескиванию воды. Коврик второго ряда сидений сделан цельный - одной частью. Смещение коврика 2-го ряда исключено за счет прилегания краев к деталям интерьера. Полностью закрытая область дверного проема вплоть до пластиковой накладки порога.
+		.wrapper
+			.product-fit
+				.product-fit__img
+					img(src="images/photo/product-image.png")
+				.product-fit__info
+					.product-fit__title Данные коврики предназначены для следующих моделей автомобилей:
+					.product-fit__list
+						- var year = 2019;
+						- var year1 = 2019;
+						ul
+							while year >= 2008
+								if year <= 2011
+									li TOYOTA Land Cruiser 200 #{year}*
+								else
+									li TOYOTA Land Cruiser 200 #{year}
+								- year--
+						ul
+							while year1 >= 2008
+								if year1 <= 2011
+									li LEXUS LX570 #{year1}*
+								else
+									li LEXUS LX570 #{year1}
+								- year1--
+					.product-fit__note *Для этого автомобиля потребуется приобретение дополнительных фиксаторов. А также последующая их уставновка в обивку пола для крепления 
+		.wrapper-outer
+			.title Фотографии клиентов
+			#masonry
+				.grid-sizer
+				.masonry-item
+					img(src="images/photo/advangages-photo_01.jpg")
+				.masonry-item
+					img(src="images/photo/advangages-photo_02.jpg")
 		.comments
 			.wrapper
 				.title Отзывы
@@ -75,8 +180,8 @@ html
 			.order-label__title Коврики салона черные WeatherTech для  Toyota Land Cruiser 200 2016-
 			a.btn(href="#") Заказать
 		.footer
-			.footer__copyright-title title dsdfgfdg df gdf 
-			.footer__copyright-text copyright-text b hfh fghf fghfdfgdfg  dfg dg dfgdg dg d copyright-text b hfh fghf fghfdfgdfg  dfg dg dfgdg dg d
+			.footer__copyright-title 2014-2018 ООО Автопокрытия ИНН 5403364313 ОГРН 1145476140920 
+			.footer__copyright-text Копирование, публикация, распространение, цитирование и любые иные действия с информацией на данном сайте категорически запрещено!
 			ul.footer__list
 				li
 					a(href="#") Каталог
