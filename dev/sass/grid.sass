@@ -33,9 +33,8 @@
 .show-
 	&phablet
 		display: none
-	+breakpoint(phablet)
-			display: block
-
+		+breakpoint(phablet)
+				display: block
 
 
 	&tablet
@@ -87,11 +86,8 @@
 
 .row
 	margin: 0 -10px
-	&_padding-bottom
-		padding-bottom: 30px
-
 [class*='col-']
-	padding: 0 15px
+	padding: 0 20px
 	min-height: 1px
 	&.padding-off
 		padding: 0
