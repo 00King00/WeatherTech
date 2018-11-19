@@ -40,22 +40,99 @@ ul
 	+breakpoint(mobileonly)
 		font: 400 30px $pfdin
 		margin-bottom: 25px
+.advantages
+	padding-bottom: 30px
+	counter-reset: counter
+	&__title
+		font: 400 48px $pfdin
+		text-transform: uppercase
+		margin-bottom: 30px
+		+breakpoint(mobileonly)
+			font: 400 26px $pfdin
+	&__text
+		color: #848484
+		font: 400 18px Helvetica
+		margin-bottom: 50px
+		+breakpoint(mobileonly)
+			font: 400 18px Helvetica
+	&__item
+		position: relative
+		padding-left: 60px
+		padding-right: 60px
+
+
+		+breakpoint(tablet)
+			width: 50%
+		&::before
+			counter-increment: counter
+			content: "0" counter(counter) " ."
+			position: absolute
+			color: #46484c
+			font: 400 18px $pfdin
+			top: 8px
+			left: 0
+		&::after
+			content: ""
+			display: inline-block
+			border-left: 1px solid #b2bdcc
+			position: absolute
+			width: 1px
+			height: 37px
+			top: 8px
+			left: 30px
+		&:nth-child(odd)
+			float: right
+			+breakpoint(tablet)
+				margin-left: 10px
+
+
+		&:nth-child(even)
+			float: left
+
+
+.promo
+	padding: 70px 0 60px 0
+	background-color: #000000
+	text-align: center
+	margin-bottom: 90px
+	&__img
+		margin: 0 auto 45px auto
+	&__text
+		color: white
+		font: 400 36px $pfdin
+		margin: 0 auto
+		max-width: 390px
+		text-transform: uppercase
+
 .product-fit
 	text-align: center
 	&__img
 		margin-bottom: 25px
 	&__title
-
+		font: 400 19px/1.35em Helvetica
+		text-transform: uppercase
+		margin-bottom: 35px
 	&__note
 		color: #848484
+		font: 400 14px Helvetica
+		margin-bottom: 70px
+
 
 	&__info
 		margin: 0 auto
 		max-width: 660px
+
 	&__list
 		display: flex
 		justify-content: space-around
 		text-align: justify
+		font: 400 14px Helvetica
+		font-family: Helvetica
+		color: #848484
+		padding-bottom: 35px
+		li
+			&:not(:last-child)
+				margin-bottom: 15px
 .grid-sizer, .masonry-item
 	 width: 33.333%
 .comments
@@ -77,18 +154,16 @@ ul
 		border-radius: 107px
 		float: left
 		margin-right: 30px
+		margin-bottom: 30px
 	&__autor
 		text-transform: uppercase
 		font: 400 26px $pfdin
-		height: 62px
-		overflow: hidden
 		+breakpoint(mobileonly)
 			font: 400 24px $pfdin
 		+breakpoint(tablet)
 			font: 400 36px $pfdin
-			height: 86px
-		+breakpoint(laptop)
-			height: auto
+
+
 	&__autor-description
 		color: #8b8b8b
 		font: 400 18px $pfdin
