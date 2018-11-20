@@ -10,7 +10,7 @@ $(function(){
 	})
 	$('#masonry').masonry({
 		itemSelector: '.masonry-item',
-		percentPosition: true,
+		//percentPosition: true,
 		columnWidth: '.grid-sizer'
 	});
 	$('.about-item__description').hide();
@@ -32,8 +32,7 @@ $(function(){
 		var step = val_scroll/time;
 		var timer = setInterval(function(){
 			val_scroll = val_scroll - step;
-			document.body.scrollTop = val_scroll; // For Safari
-			//document.documentElement.scrollTop = val_scroll_1; // For Chrome, Firefox, IE and Opera
+			document.body.scrollTop = val_scroll;
 			if (val_scroll <= 0){
 				clearInterval(timer);
 			}
