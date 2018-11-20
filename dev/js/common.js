@@ -25,4 +25,18 @@ $(function(){
 			}
 		$(this).children('.circle-plus').toggleClass('opened');
 	})
+
+	$("#up-button").click(function(){
+		var val_scroll = document.body.scrollTop;
+		var time = 50;
+		var step = val_scroll/time;
+		var timer = setInterval(function(){
+			val_scroll = val_scroll - step;
+			document.body.scrollTop = val_scroll; // For Safari
+			//document.documentElement.scrollTop = val_scroll_1; // For Chrome, Firefox, IE and Opera
+			if (val_scroll <= 0){
+				clearInterval(timer);
+			}
+		}, (10));
+	})
 })

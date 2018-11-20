@@ -582,6 +582,48 @@ ul.header-user-buttons
 	max-width: 1070px
 	padding: 70px 20px 45px 20px
 	text-align: center
+	position: relative
+	.btn
+		position: relative
+		+breakpoint(phablet)
+			margin: 0 auto
+			padding: 20px
+			width: 400px
+			display: flex
+			align-items: center
+			justify-content: center
+			.icon
+				margin: 0
+				position: absolute
+				top: 50%
+				left: 30px
+				transform: translateY(-50%)
+	&::after
+		+breakpoint(phablet)
+			content: ""
+			display: inline-block
+			height: 40px
+			width: 7px
+			top: -10px
+			left: 55%
+			border: 1px solid grey
+			border-top: none
+			border-bottom: none
+			position: absolute
+			transform:  skewX(-20deg) skewY(70deg)
+	&::before
+		+breakpoint(phablet)
+			content: ""
+			display: inline-block
+			height: 70px
+			width: 7px
+			bottom: -60px
+			left: 45%
+			border: 1px solid grey
+			border-top: none
+			border-bottom: none
+			position: absolute
+			transform: skewX(-20deg) skewY(70deg)
 	+breakpoint(mobileonly)
 		padding: 30px 10px 15px 10px
 		margin-bottom: 25px
@@ -597,6 +639,7 @@ ul.header-user-buttons
 	padding: 55px 0 25px 0
 	text-align: center
 	color: white
+	position: relative
 	&__copyright-title
 		margin: 0  auto 25px auto
 		font: 300 16px/18px $Helvetica
@@ -627,3 +670,19 @@ ul.header-user-buttons
 		margin: 0 auto
 		display: flex
 		justify-content: space-between
+#up-button
+	position: absolute
+	width: 45px
+	height: 45px
+	border: 1px solid white
+	right: 55px
+	padding-top: 17.5px
+	top: 15px
+	&::before
+		content: ""
+		display: inline-block
+		width: 10px
+		height: 10px
+		border-left: 1px solid white
+		border-top: 1px solid white
+		transform: rotate(45deg)
