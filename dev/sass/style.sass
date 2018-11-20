@@ -76,18 +76,18 @@ ul
 .advantage-text
 	display: inline-block
 	padding: 50px 20px 0 20px
-	font: 200 14px/24px $Helvetica
+	font: 300 14px/24px $Helvetica
 	margin-bottom: 30px
 	+breakpoint(phablet)
 		padding: 50px 20px 0 20px
-		font: 200 12px/18px $Helvetica
+		font: 300 12px/18px $Helvetica
 		margin-bottom: 0
 	+breakpoint(tablet)
 		padding: 80px 40px 0 40px
-		font: 200 14px/24px $Helvetica
+		font: 300 14px/24px $Helvetica
 	+breakpoint(laptop)
 		padding: 110px 60px 0 60px
-		font: 200 18px/30px $Helvetica
+		font: 300 18px/30px $Helvetica
 	+breakpoint(tablet)
 
 	+breakpoint(laptop)
@@ -225,6 +225,32 @@ ul.header-user-buttons
 		background-image: url('../images/cart-icon-33x23.svg')
 		width: 33px
 		height: 23px
+	&_fb
+		background-image: url('../images/social-icons.png')
+		width: 23px
+		height: 23px
+		background-position: -17px 0
+	&_vk
+		background-image: url('../images/social-icons.png')
+		width: 23px
+		height: 23px
+		background-position: -55px 0
+	&_youtube
+		background-image: url('../images/social-icons.png')
+		background-position: -85px 0
+		width: 33px
+		height: 23px
+	&_d
+		background-image: url('../images/social-icons.png')
+		background-position: -125px 0
+		width: 23px
+		height: 23px
+	&_insta
+		background-image: url('../images/social-icons.png')
+		background-position: -155px 0
+		width: 33px
+		height: 23px
+
 .logo
 	display: block
 	margin-bottom: 30px
@@ -251,19 +277,21 @@ ul.header-user-buttons
 			font: 400 11px/16px $Helvetica
 			text-transform: uppercase
 			color: #fff
-		.catalog
-			margin-right: 10px
-			position: relative
-			top: 2px
-			content: ''
-			display: inline-block
-			background-image: url('../images/catalog-icon-17x12.svg')
-			width: 17px
-			height: 12px
 	ul.header-user-buttons
 		display: none
 		+breakpoint(laptop)
 			display: inline-block
+.catalog
+	margin-right: 10px
+	position: relative
+	top: 2px
+	content: ''
+	display: inline-block
+	background-image: url('../images/catalog-icon-17x12.svg')
+	width: 17px
+	height: 12px
+	&_footer
+		background-image: url('../images/catalog-icon-footer-17x12.svg')
 /*button*/
 .closed .vertical
 	transition: all 0.5s ease-in-out
@@ -397,7 +425,7 @@ ul.header-user-buttons
 	padding-bottom: 30px
 	counter-reset: counter
 	+breakpoint(mobileonly)
-		padding: 20px 0
+		padding: 40px 0
 	&__title
 		font: 400 48px/1em $pfdin
 		text-transform: uppercase
@@ -406,10 +434,10 @@ ul.header-user-buttons
 			font: 400 26px $pfdin
 	&__text
 		color: #848484
-		font: 400 18px/1.35em $Helvetica
+		font: 300 18px/1.35em $Helvetica
 		margin-bottom: 50px
 		+breakpoint(mobileonly)
-			font-size: 16px
+			font: 300 14px/24px $Helvetica
 	&__item
 		position: relative
 		padding-left: 60px
@@ -542,8 +570,11 @@ ul.header-user-buttons
 		margin-bottom: 30px
 	&__text
 		color: #848484
+		max-width: 525px
 		font: 300 18px/1.3em $Helvetica
 		padding-bottom: 20px
+		+breakpoint(mobileonly)
+			font: 300 14px/24px $Helvetica
 
 .order-label
 	margin: 0 auto 135px auto
@@ -611,10 +642,11 @@ ul.header-user-buttons
 	position: relative
 	&__copyright-title
 		margin: 0  auto 25px auto
-		max-width: 470px
+		font: 300 16px/18px $Helvetica
 
 	&__copyright-text
 		margin: 0  auto 30px auto
+		font: 300 12px/18px $Helvetica
 		max-width: 470px
 	&__list
 		margin-bottom: 25px
@@ -623,7 +655,7 @@ ul.header-user-buttons
 		li
 			display: inline-block
 			padding: 0 20px
-			color: grey
+			color: #9b9b9b
 			//flex-shrink: 1
 			+breakpoint(mobileonly)
 				display: block
