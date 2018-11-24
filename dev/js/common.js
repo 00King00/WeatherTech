@@ -8,11 +8,6 @@ $(function(){
 			{duration:500}
 		);
 	})
-	$('#masonry').masonry({
-		itemSelector: '.masonry-item',
-		percentPosition: true,
-		columnWidth: '.grid-sizer'
-	});
 	$('.about-item__description').hide();
 	$('.about-item').click(function() {
 		var $more = $(this).children('.about-item__description');
@@ -39,4 +34,11 @@ $(function(){
 			}
 		}, (10));
 	})
+	 $(window).on('load', function () {
+	 	$('#masonry').masonry({
+ 			itemSelector: '.masonry-item',
+ 			percentPosition: true,
+ 			columnWidth: '.grid-sizer'
+ 		});
+ 	});
 })
