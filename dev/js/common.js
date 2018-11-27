@@ -47,8 +47,20 @@ $(function(){
 	new WOW(
 		{
 			offset: 100,
-			live: true	
+			live: true
 		}
 	).init();
-})
+	//for .order-label
+	$(window).scroll(function(){
+		var height = window.innerHeight;
+		var elemHeight = $(".order-label").height();
+		var elem = $(".order-label")[0].getBoundingClientRect().top + elemHeight;
+		if(elem<=height){
+			$(".order-label").addClass("active");
+			$(".order-label .border").addClass("active");
+		}else{
+			$(".order-label").removeClass("active");
+			$(".order-label .border").removeClass("active");
+		}
+	});
 });
