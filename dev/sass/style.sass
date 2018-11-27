@@ -124,7 +124,8 @@ ul
 .btn
 	display: inline-block
 	text-align: center
-	cursor: pointer
+	&:hover
+		cursor: pointer
 	&_add-to-cart
 		span
 			vertical-align: middle
@@ -628,6 +629,7 @@ ul.header-user-buttons
 	transition: color 0.25s
 	.btn
 		position: relative
+		z-index: 10
 		+breakpoint(phablet)
 			margin: 0 auto
 			padding: 20px
@@ -641,32 +643,43 @@ ul.header-user-buttons
 				top: 50%
 				left: 30px
 				transform: translateY(-50%)
+	&.active
+		&::after
+			content: ""
+			height: 40px
+			top: -10px
+		&::before
+			content: ""
+			height: 70px
+			bottom: -60px
 	&::after
 		+breakpoint(phablet)
 			content: ""
 			display: inline-block
-			height: 40px
+			height: 0px
 			width: 7px
-			top: -10px
+			top: -50px
 			left: 55%
 			border: 1px solid grey
 			border-top: none
 			border-bottom: none
 			position: absolute
 			transform:  skewX(-20deg) skewY(70deg)
+			transition: all 0.4s
 	&::before
 		+breakpoint(phablet)
 			content: ""
 			display: inline-block
-			height: 70px
+			height: 0px
 			width: 7px
-			bottom: -60px
+			bottom: -100px
 			left: 45%
 			border: 1px solid grey
 			border-top: none
 			border-bottom: none
 			position: absolute
 			transform: skewX(-20deg) skewY(70deg)
+			transition: all 0.4s
 	+breakpoint(mobileonly)
 		padding: 30px 10px 15px 10px
 		margin-bottom: 25px
@@ -712,10 +725,10 @@ ul.header-user-buttons
 			border-right: 4px solid #000
 			transition: all .45s ease
 			box-sizing: border-box
-		&:hover::before
+		&.active::before
 			width: 100%
 			transition: all .45s ease
-		&:hover::after
+		&.active::after
 			height: 100%
 			transition: all .45s ease
 
