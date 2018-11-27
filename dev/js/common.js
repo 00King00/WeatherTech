@@ -41,4 +41,10 @@ $(function(){
  			columnWidth: '.grid-sizer'
  		});
  	});
+	new WOW(
+		{
+			offset: 100,
+			live: true	
+		}
+	).init();
 })

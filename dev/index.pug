@@ -43,9 +43,9 @@ html
 									a(href="#")
 										span.icon.icon_cart
 				.main-screen-title
-					.line1 ГАРАНТИРОВАННАЯ ЗАЩИТА ОТ ГРЯЗИ
-					.line2 с неограниченным сроком эксплуатации
-					.line3 
+					.line1.wow.FadeInUp(data-wow-delay="0.5s") ГАРАНТИРОВАННАЯ ЗАЩИТА ОТ ГРЯЗИ
+					.line2.wow.FadeInUp(data-wow-delay="1s") с неограниченным сроком эксплуатации
+					.line3.wow.FadeInUp(data-wow-delay="1.5s") 
 						span.signpainter для
 						span TOYOTA LAND CRUISER 200 С КОВРИКАМИ WEATHERTECH
 		.product-block
@@ -107,7 +107,8 @@ html
 				.advangages
 					.clearfix
 						.col-phablet-1-2.no-padding
-							img(src="images/photo/advangages-photo_01.jpg")
+							.advantage-img
+								img(src="images/photo/advangages-photo_01.jpg")
 						.col-phablet-1-2.no-padding
 							.advantage-text
 								span
@@ -118,10 +119,12 @@ html
 								span
 									|Водонаправляющие каналы препятствующие расплескиванию воды. Коврик второго ряда сидений сделан цельный - одной частью. Смещение коврика 2-го ряда исключено за счет прилегания краев к деталям интерьера. Полностью закрытая область дверного проема вплоть до пластиковой накладки порога.
 						.col-phablet-1-2.no-padding
-							img(src="images/photo/advangages-photo_02.jpg")
+							.advantage-img
+								img(src="images/photo/advangages-photo_02.jpg")
 					.clearfix.hide-phablet
 						.col-phablet-1-2.no-padding
-							img(src="images/photo/advangages-photo_02.jpg")
+							.advantage-img
+								img(src="images/photo/advangages-photo_02.jpg")
 						.col-phablet-1-2.no-padding
 							.advantage-text
 								span
@@ -129,18 +132,19 @@ html
 		.wrapper-outer
 			.wrapper
 				.advantages.clearfix
-					.advantages__item
-						.advantages__title Максимальная площадь  покрытия
-						.advantages__text Вся грязь остается внутри коврика и не попадает в обивку. Это реальная экономия на влажной уборке салона.
-					.advantages__item
-						.advantages__title Абсолютная  износостойкость
-						.advantages__text Коврики не протираются каблуками, не царапаются, Не выцветают и не оставляют следов на обуви.
-					.advantages__item
-						.advantages__title Индивидуальная 3D модель
-						.advantages__text Дизайн конкретного автомобиля. Четкое прилегание к обивке кузова. Бортики не теряют своей формы в процессе эксплуатации.
+					.advantages__item.wow.FadeIn(data-wow-duration="2s")
+						.advantages__title.wow.FadeInUp Максимальная площадь  покрытия
+						.advantages__text.wow.FadeInUp(data-wow-delay="0.5s") Вся грязь остается внутри коврика и не попадает в обивку. Это реальная экономия на влажной уборке салона.
+					.advantages__item.wow.FadeIn(data-wow-duration="2s", data-wow-offset="10")
+						.advantages__title.wow.FadeInUp(data-wow-offset="150") Абсолютная  износостойкость
+						.advantages__text.wow.FadeInUp(data-wow-delay="0.5s") Коврики не протираются каблуками, не царапаются, Не выцветают и не оставляют следов на обуви.
+					.advantages__item.wow.FadeIn(data-wow-duration="2s", data-wow-offset="10")
+						.advantages__title.wow.FadeInUp(data-wow-offset="150") Индивидуальная 3D модель
+						.advantages__text.wow.FadeInUp(data-wow-delay="0.5s") Дизайн конкретного автомобиля. Четкое прилегание к обивке кузова. Бортики не теряют своей формы в процессе эксплуатации.
 			.promo
 				.promo__img
-					img(src="images/photo/product-for-l200.jpg")
+					iframe(src="https://www.youtube.com/embed/3jT_q7dt-cM" frameborder="0" allowfullscreen)
+					//- img(src="images/photo/product-for-l200.jpg")
 				.promo__text Спроектированы специально для LAND CRUISER 200
 		.wrapper
 			.product-fit
@@ -204,10 +208,11 @@ html
 						.comments__title TOYOTA Land Cruiser Prado 150 2011
 						.comments__text Покупал в Прадо 2011 черные коврики в 2012 году. Коврами очень доволен! Особенно радует тот факт, что они закрывают на много большую поверхность, чем оригинальные. А мне как любителю природы это очень важно, потому что на охоте и рыбалке вся грязь попадает в салон, причем довольно много))) до покупки приходилось регулярно наводить порядок в салоне после каждой поездки, а теперь я просто мою коврики и все. Рекомендую!
 		.order-label
-			.order-label__title Коврики салона черные WeatherTech для  Toyota Land Cruiser 200 2016-
-			.btn.btn_add-to-cart
-				span.icon.icon_cart
-				span Заказать
+			.border.draw.meet
+				.order-label__title Коврики салона черные WeatherTech для  Toyota Land Cruiser 200 2016-
+				.btn.btn_add-to-cart
+					span.icon.icon_cart
+					span Заказать
 		.footer
 			#up-button
 			.footer__copyright-title 2014-2018 ООО Автопокрытия ИНН 5403364313 ОГРН 1145476140920 

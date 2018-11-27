@@ -4,6 +4,7 @@
 
 
 *
+	-webkit-overflow-scrolling: touch
 	box-sizing: border-box
 img
 	max-width: 100%
@@ -63,6 +64,14 @@ ul
 	background-size: cover
 	+breakpoint(tablet)
 		background-position: center
+.masonry-item
+	overflow: hidden
+	img
+		transition: 0.5s all ease
+	&:hover
+		img
+			transition: 0.5s all ease
+			transform: scale(1.1)
 .product-block
 	padding: 50px 0
 	+breakpoint(tablet)
@@ -70,6 +79,13 @@ ul
 	background: #f3f5f8
 .advangages
 	margin-top: 100px
+	img
+		transition: .5s all ease
+		&:hover
+			transition: .5s all ease
+			transform: scale(1.1)
+	.advantage-img
+		overflow: hidden
 	+breakpoint(phablet)
 		margin-top: 200px
 	background: #fff
@@ -479,7 +495,31 @@ ul.header-user-buttons
 	text-align: center
 	margin-bottom: 90px
 	&__img
-		margin: 0 auto 45px auto
+		position: relative
+		// padding-bottom: 56.25%
+		padding-top: 15px
+		height: 400px
+		margin: 0px auto
+		margin-bottom: 30px
+		max-width: 800px
+		iframe
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			width: 100%
+			height: 100%
+		&:after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			z-index: 1
+			display: block
+		&:hover:after
+			content: none
 	&__text
 		color: white
 		font: 400 36px $pfdin
@@ -520,9 +560,11 @@ ul.header-user-buttons
 			&:not(:last-child)
 				margin-bottom: 15px
 .grid-sizer, .masonry-item
-	 width: 33.333%
-	 +breakpoint(mobileonly)
-		 width: 50%
+	width: 33.333%
+	+breakpoint(mobileonly)
+		width: 50%
+	+breakpoint(retina)
+		width: 25%
 .comments
 	background-color: #f3f5f8
 	padding-bottom: 125px
@@ -578,11 +620,12 @@ ul.header-user-buttons
 
 .order-label
 	margin: 0 auto 135px auto
-	border: 5px solid black
+	// border: 5px solid black
 	max-width: 1070px
-	padding: 70px 20px 45px 20px
+	// padding: 70px 20px 45px 20px
 	text-align: center
 	position: relative
+	transition: color 0.25s
 	.btn
 		position: relative
 		+breakpoint(phablet)
@@ -634,6 +677,91 @@ ul.header-user-buttons
 		margin: 0 auto 25px auto
 		+breakpoint(mobileonly)
 			font:  400 18px $pfdin
+	.border
+		max-width: 1070px
+		padding: 70px 20px 45px 20px
+		text-align: center
+		position: relative
+		background: none
+		border: 0
+		box-sizing: border-box
+		// Using inset box-shadow instead of border for sizing simplicity
+		box-shadow: inset 0 0 0 5px grey
+		// Required, since we're setting absolute on pseudo-elements
+		position: relative
+		vertical-align: middle
+		&::before
+			position: absolute
+			height: 100%
+			width: 0
+			content: ""
+			top: 0
+			left: 0
+			border-top: 4px solid #000
+			border-bottom: 4px solid #000
+			transition: all .45s ease
+			box-sizing: border-box
+		&::after
+			position: absolute
+			width: 100%
+			height: 0
+			content: ""
+			top: 0
+			left: 0
+			border-left: 4px solid #000
+			border-right: 4px solid #000
+			transition: all .45s ease
+			box-sizing: border-box
+		&:hover::before
+			width: 100%
+			transition: all .45s ease
+		&:hover::after
+			height: 100%
+			transition: all .45s ease
+
+	// 	&:before, &:after
+	// 		box-sizing: inherit
+	// 		content: ''
+	// 		position: absolute
+	// 		width: 100%
+	// 		height: 100%
+	// .draw
+	// 	transition: color 0.5s
+	// 	&::before,&::after
+	// 		transition: color 0.5s
+	// 		border: 5px solid transparent
+	// 		width: 0
+	// 		height: 0
+	// 	&::before
+	// 		top: 0
+	// 		left: 0
+	// 	&::after
+	// 		bottom: 0
+	// 		right: 0
+	// 		// transition: height 0.25s ease-out, 0.25s width 0.25s ease-out
+	// 	&:hover::before, &:hover::after
+	// 		width: 100%
+	// 		height: 100%
+	// 	&:hover::before
+	// 		border-top-color: grey
+	// 		border-right-color: grey
+	// 		transition: width 0.25s ease-out, 0.25s height 0.25s ease-out
+	// 	&:hover::after
+	// 		border-bottom-color: grey
+	// 		border-left-color: grey
+	// 		transition: width 0.25s ease-out 0.5s, 0.25s height 0.75s ease-out
+	// .meet
+	// 	&::after
+	// 		top: 0
+	// 		left: 0
+	// 	&:hover::before
+	// 		border-left-color: green
+	// 		border-right-color: green
+	//
+	// 	&:hover::after
+	// 		border-bottom-color: green
+	// 		border-top-color: green
+	// 		transition: height 0.25s ease-out, width 0.25s ease-out 0.25s
 .footer
 	background-color: #030304
 	padding: 55px 0 25px 0

@@ -1,5 +1,7 @@
 @mixin breakpoint($point)
-	@if $point == desktop
+	@if $point == retina
+		@media (min-width: 90em) { @content }
+	@else if $point == desktop
 		@media (min-width: 70em) { @content }
 	@else if $point == laptop
 		@media (min-width: 64em) { @content }
