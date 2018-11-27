@@ -1,4 +1,5 @@
 $(function(){
+	var $grid = $('#masonry');
 	//burder buttons and menu
 	$('.bars').click(function(){
 		console.log(1);
@@ -8,6 +9,16 @@ $(function(){
 			{duration:500}
 		);
 	})
+	//setTimeout(function() {$grid.masonry();}, 900);
+	$grid.imagesLoaded(function() {
+		$grid.masonry({
+			columnWidth: '.grid-sizer',
+			itemSelector: '.masonry-item'
+
+		});
+	});
+	//$grid.masonry('reloadItems')
+
 	$('.about-item__description').hide();
 	$('.about-item').click(function() {
 		var $more = $(this).children('.about-item__description');
@@ -27,20 +38,12 @@ $(function(){
 		var step = val_scroll/time;
 		var timer = setInterval(function(){
 			val_scroll = val_scroll - step;
-			document.body.scrollTop = val_scroll; // For Safari
-			//document.documentElement.scrollTop = val_scroll_1; // For Chrome, Firefox, IE and Opera
+			document.body.scrollTop = val_scroll;
 			if (val_scroll <= 0){
 				clearInterval(timer);
 			}
 		}, (10));
 	})
-	 $(window).on('load', function () {
-	 	$('#masonry').masonry({
- 			itemSelector: '.masonry-item',
- 			percentPosition: true,
- 			columnWidth: '.grid-sizer'
- 		});
- 	});
 	new WOW(
 		{
 			offset: 100,
@@ -48,3 +51,4 @@ $(function(){
 		}
 	).init();
 })
+});
