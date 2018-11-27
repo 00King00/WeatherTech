@@ -9,7 +9,6 @@ $(function(){
 			{duration:500}
 		);
 	})
-
 	//setTimeout(function() {$grid.masonry();}, 900);
 	$grid.imagesLoaded(function() {
 		$grid.masonry({
@@ -19,6 +18,7 @@ $(function(){
 		});
 	});
 	//$grid.masonry('reloadItems')
+
 	$('.about-item__description').hide();
 	$('.about-item').click(function() {
 		var $more = $(this).children('.about-item__description');
@@ -44,5 +44,11 @@ $(function(){
 			}
 		}, (10));
 	})
-
+	new WOW(
+		{
+			offset: 100,
+			live: true	
+		}
+	).init();
+})
 });
