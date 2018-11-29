@@ -58,12 +58,24 @@ ul
 	transition: all 0.5s ease
 .main-screen
 	padding-bottom: 200px
-	+breakpoint(tablet)
-		padding-bottom: 300px
+	position: relative
 	background: url('../images/photo/main-background.png')
 	background-size: cover
 	+breakpoint(tablet)
+		padding-bottom: 300px
 		background-position: center
+	&.active
+		&::before
+			content: ''
+			background: rgba(0,0,0,0.7)
+			width: 100%
+			height: 100%
+			position: absolute
+			transition: all 0.4s ease
+			top: 0
+			left: 0
+			bottom: 0
+			right: 0
 .masonry-item
 	overflow: hidden
 	img
@@ -141,7 +153,12 @@ ul
 				right: 95px
 		height: 52px
 		font: 600 14px/52px $Helvetica
-
+		&:hover
+			background: transparent
+			border: 2px solid #545454
+			color: #545454
+			.icon_cart
+				background-image: url('../images/cart-icon-33x23-hover.svg')
 .main-screen-title
 	color: #fff
 	.line1
@@ -198,6 +215,8 @@ ul.header-user-buttons
 	li:first-child
 		border-right: 1px solid #7e7e7e
 .header-top
+	position: relative
+	z-index: 10
 	+breakpoint(laptop)
 		text-align: center
 	padding: 10px 30px
@@ -271,9 +290,12 @@ ul.header-user-buttons
 .logo
 	display: block
 	margin-bottom: 30px
+	position: relative
 	+breakpoint(laptop)
 		display: inline-block
 .main-menu
+	position: relative
+	z-index: 3
 	display: inline-block
 	+breakpoint(laptop)
 		display: inline-block
@@ -287,7 +309,7 @@ ul.header-user-buttons
 			display: block
 			margin: 10px 0
 			&:hover
-				color: #ce181e
+				color: #a3a3a3
 			+breakpoint(laptop)
 				display: inline-block
 				margin: 0 15px
@@ -343,6 +365,7 @@ ul.header-user-buttons
 .circle-plus .circle
 	position: relative
 	top: 5px
+	z-index: 1
 	width: 1em
 	height: 0em
 	border-radius: 100%
@@ -408,7 +431,7 @@ ul.header-user-buttons
 			&:before
 				position: absolute
 				left: -15px
-				top: 4px
+				top: 1px
 				content: ""
 				width: 10px
 				height: 10px
@@ -423,11 +446,67 @@ ul.header-user-buttons
 	padding: 15px 0
 	margin-bottom: -1px
 	&__name
+		cursor: pointer
+		position: relative
+		z-index: 3
 		font: 400 21px/21px $pfdin
 	&__description
 		padding-top: 20px
-		font: 400 13px/13px $Helvetica
+		font: 400 13px/18px $Helvetica
 		color: #848484
+		p
+			margin-bottom:  10px
+		input
+			font: 400 13px/40px $Helvetica
+			display: block
+			height: 40px
+			width: 320px
+			padding: 0 10px
+			outline: none
+			margin-bottom: 10px
+			border: 1px solid #c7ccd3
+			+breakpoint(mobileonly)
+				width: 100%
+		// input[name="user-name"]
+		// 	display: block
+		// 	width: 100%
+		textarea
+			outline: none
+			font: 400 13px/18px $Helvetica
+			display: block
+			padding: 10px
+			width: 320px
+			height: 100px
+			border: 1px solid #c7ccd3
+			resize: none
+			margin-bottom: 10px
+			+breakpoint(mobileonly)
+				width: 100%
+		button
+			display: block
+			width: 320px
+			// margin: 0 auto
+			background: #000
+			border: 2px solid #000
+			color: #fff
+			font: 600 14px/40px $Helvetica
+			height: 40px
+			text-align: center
+			&:hover
+				background: transparent
+				border: 2px solid #545454
+				color: #545454
+			+breakpoint(mobileonly)
+				width: 100%
+
+.faq
+	&__question
+		cursor: pointer
+		font: 600 13px/18px $Helvetica
+		color: black
+		padding: 10px 0
+
+
 
 .title
 	font: 400 60px $pfdin
@@ -699,7 +778,7 @@ ul.header-user-buttons
 		border: 0
 		box-sizing: border-box
 		// Using inset box-shadow instead of border for sizing simplicity
-		box-shadow: inset 0 0 0 5px grey
+		box-shadow: inset 0 0 0 5px transparent
 		// Required, since we're setting absolute on pseudo-elements
 		position: relative
 		vertical-align: middle
