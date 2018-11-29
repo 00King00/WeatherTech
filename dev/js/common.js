@@ -9,7 +9,6 @@ $(function(){
 			{duration:500}
 		);
 	})
-	//setTimeout(function() {$grid.masonry();}, 900);
 	$grid.imagesLoaded(function() {
 		$grid.masonry({
 			columnWidth: '.grid-sizer',
@@ -17,7 +16,6 @@ $(function(){
 
 		});
 	});
-	//$grid.masonry('reloadItems')
 
 	$('.about-item__description').hide();
 	$('.about-item__name').click(function() {
@@ -45,16 +43,7 @@ $(function(){
 	})
 
 	$("#up-button").click(function(){
-		var val_scroll = document.body.scrollTop;
-		var time = 50;
-		var step = val_scroll/time;
-		var timer = setInterval(function(){
-			val_scroll = val_scroll - step;
-			document.body.scrollTop = val_scroll;
-			if (val_scroll <= 0){
-				clearInterval(timer);
-			}
-		}, (10));
+		$("html, body").animate({ scrollTop: 0 }, 600);
 	})
 	new WOW(
 		{
@@ -81,14 +70,11 @@ $(function(){
 		}
 		var headerOfset=$(".header-bottom").offset().top;
 		var scrollTop=$(window).scrollTop();
-		console.log(scrollTop);
-		if(scrollTop<37){
-			$('.header-top').animate({marginTop: -37}, 500);
-		}
-		else {
-			$('.header-top').animate({marginTop: 0}, 500);
+		if(scrollTop<headerOfset && scrollTop > 10){
+			$(window).scrollTop(headerOfset);
 		}
 	});
+
 	// input-mask
 		$('input[type="tel"]').inputmask('+7(999) 999 - 99 - 99');
 });
