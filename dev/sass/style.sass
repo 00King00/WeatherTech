@@ -13,10 +13,11 @@ body
 	overflow-x: hidden
 	min-height: 100%
 	min-width: 320px
-
 	z-index: 0
-
 	font-family: $Helvetica // Основной шрифт
+	transition: top 0.4s
+
+
 
 button, input[type="button"], input[type="reset"], input[type="submit"]
 	padding: 0
@@ -898,6 +899,7 @@ ul.header-user-buttons
 	padding-top: 13px
 	bottom: 20px
 	right: 20px
+	cursor: pointer
 	+breakpoint(laptop)
 		right: 55px
 		top: 15px
