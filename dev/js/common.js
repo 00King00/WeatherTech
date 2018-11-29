@@ -2,7 +2,7 @@ $(function(){
 	var $grid = $('#masonry');
 	//burder buttons and menu
 	$('.bars').click(function(){
-		console.log(1);
+		$(".main-screen").toggleClass('active')
 		$(this).toggleClass('active');
 		$(".menu").animate(
 			{height: 'toggle'},
@@ -20,8 +20,8 @@ $(function(){
 	//$grid.masonry('reloadItems')
 
 	$('.about-item__description').hide();
-	$('.about-item').click(function() {
-		var $more = $(this).children('.about-item__description');
+	$('.about-item__name').click(function() {
+		var $more = $(this).siblings('.about-item__description');
 			if ($more.is(':hidden')) {
 				$more.slideDown();
 				$(this).addClass('close');
@@ -29,7 +29,19 @@ $(function(){
 				$more.slideUp();
 				$(this).removeClass('close');
 			}
-		$(this).children('.circle-plus').toggleClass('opened');
+		$(this).siblings('.circle-plus').toggleClass('opened');
+	})
+	$('.faq__answer').hide();
+	$('.faq__question').click(function() {
+		var $more = $(this).siblings('.faq__answer');
+			if ($more.is(':hidden')) {
+				$more.slideDown();
+				$(this).addClass('close');
+			} else {
+				$more.slideUp();
+				$(this).removeClass('close');
+			}
+		$(this).siblings('.circle-plus').toggleClass('opened');
 	})
 
 	$("#up-button").click(function(){
@@ -51,6 +63,7 @@ $(function(){
 		}
 	).init();
 	//for .order-label
+	var distance=$('.main-screen-title')[0].getBoundingClientRect().top;
 	$(window).scroll(function(){
 		var height = window.innerHeight;
 		var elemHeight = $(".order-label").height();
@@ -62,5 +75,20 @@ $(function(){
 			$(".order-label").removeClass("active");
 			$(".order-label .border").removeClass("active");
 		}
+		var opacity=$('.main-screen-title')[0].getBoundingClientRect().bottom/distance;
+		if(opacity>=0){
+			$('.main-screen-title').css("opacity",opacity)
+		}
+		var headerOfset=$(".header-bottom").offset().top;
+		var scrollTop=$(window).scrollTop();
+		console.log(scrollTop);
+		if(scrollTop<37){
+			$('.header-top').animate({marginTop: -37}, 500);
+		}
+		else {
+			$('.header-top').animate({marginTop: 0}, 500);
+		}
 	});
+	// input-mask
+		$('input[type="tel"]').inputmask('+7(999) 999 - 99 - 99');
 });
