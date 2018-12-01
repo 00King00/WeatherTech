@@ -6,9 +6,10 @@ var gulp 			= require('gulp'),
 	reload 			= browserSync.reload,
 	server     		= require('gulp-server-livereload'),
 	watch 			= require('gulp-watch'),
-	cleancss 		= require('gulp-cleancss'),
+	cleanCSS 		= require('gulp-cleancss'),
 	plumber     = require('gulp-plumber');
-
+var uglify = require('gulp-uglify');
+var imagemin = require('gulp-imagemin');
 
 
 gulp.task('webserver', function() {
@@ -35,6 +36,8 @@ gulp.task('html', function(){
   gulp.src('./dev/js/*.js')
 	  .pipe(watch ('./dev/js/*.js'))
     .pipe(plumber())
+	.pipe(uglify())
+
 	  .pipe(gulp.dest('./app/js'))
 });
 
@@ -47,6 +50,7 @@ gulp.task('scss', function() {
 		browsers: ['last 20 versions']
 
 	}))
+	.pipe(cleanCSS({level:2}))
 	.pipe(gulp.dest('./app/css/'))
 });
 
@@ -55,7 +59,9 @@ gulp.task('images', function() {
     .pipe(watch('./dev/images/**'))
     .pipe(plumber())
     .pipe(gulp.dest('./app/images/'))
+	.pipe(imagemin())
     gulp.src('./dev/*.ico')
+	.pipe(imagemin())
     .pipe(gulp.dest('./app/'))
 });
 gulp.task('libs', function() {
