@@ -55,11 +55,11 @@ gulp.task('scss', function() {
 });
 
 gulp.task('images', function() {
-    gulp.src('./dev/images/**')
-    .pipe(watch('./dev/images/**'))
+    gulp.src('./dev/images/**/*')
+    .pipe(watch('./dev/images/**/*'))
     .pipe(plumber())
-    .pipe(gulp.dest('./app/images/'))
 	.pipe(imagemin())
+    .pipe(gulp.dest('./app/images/'))
     gulp.src('./dev/*.ico')
 	.pipe(imagemin())
     .pipe(gulp.dest('./app/'))
