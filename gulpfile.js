@@ -18,8 +18,7 @@ gulp.task('webserver', function() {
       directoryListing: false,
       open: true,
       livereload: {
-      enable: true,
-
+      enable: true
       }
     }))
     .pipe(plumber())
